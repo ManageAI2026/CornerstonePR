@@ -1,0 +1,6 @@
+# Never deploy the unencrypted source or build tooling — only the site pages ship
+scorecard-source.html
+tools/
+assets/
+README.md
+.gitignore
