@@ -14,6 +14,7 @@ const ITERATIONS = 600000;
 
 const plaintext = readFileSync(join(root, 'scorecard-source.html'), 'utf8');
 const logoDataUri = 'data:image/png;base64,' + readFileSync(join(root, 'assets', 'logo.png')).toString('base64');
+const logoWhiteDataUri = 'data:image/png;base64,' + readFileSync(join(root, 'assets', 'logo-white.png')).toString('base64');
 
 const salt = crypto.getRandomValues(new Uint8Array(16));
 const iv = crypto.getRandomValues(new Uint8Array(12));
@@ -33,9 +34,9 @@ const page = `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta n
 <title>Manage AI · Cornerstone PR</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--navy:#101D3A;--ink:#1E293B;--blue:#2F5FC4;--blue2:#254FA8;--bd:#E2E6EC;--slate:#475569;--mut:#8A97A8;--red:#DC2626;--head:'Montserrat',system-ui,sans-serif;--body:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif}
+:root{--navy:#1F2A3D;--ink:#1E293B;--blue:#2F5FC4;--blue2:#254FA8;--bd:#E2E6EC;--slate:#475569;--mut:#8A97A8;--red:#DC2626;--head:'Montserrat',system-ui,sans-serif;--body:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif}
 *{box-sizing:border-box}
-body{margin:0;min-height:100vh;background:radial-gradient(1200px 800px at 50% 38%,#182B57 0%,var(--navy) 65%);color:var(--slate);font-family:var(--body);display:flex;align-items:center;justify-content:center;padding:24px}
+body{margin:0;min-height:100vh;background:var(--navy);color:var(--slate);font-family:var(--body);display:flex;align-items:center;justify-content:center;padding:24px}
 .card{width:100%;max-width:400px;background:#fff;border-radius:14px;padding:38px 36px 34px;box-shadow:0 20px 60px rgba(10,18,32,.45)}
 .logorow{display:flex;align-items:center;gap:10px;margin-bottom:26px}
 .logorow img{height:24px;width:auto;display:block}
@@ -102,13 +103,25 @@ try { const saved = sessionStorage.getItem('mai_pw'); if (saved) attempt(saved, 
 </body></html>
 `;
 
-const redirect = `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow">
-<meta http-equiv="refresh" content="0;url=/PennyPR/">
-<title>Manage AI</title></head>
-<body style="margin:0;min-height:100vh;background:#101D3A"></body></html>
-`;
+const home = `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Cornerstone · Manage AI</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;background:#1F2A3D;display:flex;align-items:center;justify-content:center;padding:24px;font-family:'Montserrat',system-ui,sans-serif}
+.wrap{text-align:center}
+.wrap img{width:min(320px,70vw);height:auto;display:block;margin:0 auto 18px}
+.wrap .t{font:700 12px/1.4 'Montserrat',sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#8FA5CC}
+</style></head><body>
+<div class="wrap">
+  <img src="\${LOGO_WHITE}" alt="Manage AI">
+  <div class="t">Cornerstone</div>
+</div>
+</body></html>
+`.replace('\${LOGO_WHITE}', logoWhiteDataUri);
 
 mkdirSync(join(root, 'PennyPR'), { recursive: true });
 writeFileSync(join(root, 'PennyPR', 'index.html'), page);
-writeFileSync(join(root, 'index.html'), redirect);
-console.log('PennyPR/index.html written (' + page.length + ' bytes), root redirect written, password: ' + PASSWORD);
+writeFileSync(join(root, 'index.html'), home);
+console.log('PennyPR/index.html written (' + page.length + ' bytes), root placeholder written, password: ' + PASSWORD);
