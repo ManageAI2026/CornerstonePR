@@ -33,9 +33,9 @@ const page = `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta n
 <title>Manage AI · Cornerstone PR</title>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--navy:#22304A;--ink:#1E293B;--blue:#5B8DEF;--blue2:#4A7FDB;--bd:#E2E6EC;--slate:#475569;--mut:#8A97A8;--red:#DC2626;--head:'Montserrat',system-ui,sans-serif;--body:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif}
+:root{--navy:#101D3A;--ink:#1E293B;--blue:#2F5FC4;--blue2:#254FA8;--bd:#E2E6EC;--slate:#475569;--mut:#8A97A8;--red:#DC2626;--head:'Montserrat',system-ui,sans-serif;--body:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif}
 *{box-sizing:border-box}
-body{margin:0;min-height:100vh;background:var(--navy);color:var(--slate);font-family:var(--body);display:flex;align-items:center;justify-content:center;padding:24px}
+body{margin:0;min-height:100vh;background:radial-gradient(1200px 800px at 50% 38%,#182B57 0%,var(--navy) 65%);color:var(--slate);font-family:var(--body);display:flex;align-items:center;justify-content:center;padding:24px}
 .card{width:100%;max-width:400px;background:#fff;border-radius:14px;padding:38px 36px 34px;box-shadow:0 20px 60px rgba(10,18,32,.45)}
 .logorow{display:flex;align-items:center;gap:10px;margin-bottom:26px}
 .logorow img{height:24px;width:auto;display:block}
@@ -44,7 +44,7 @@ h1{font:800 26px/1.15 var(--head);letter-spacing:-.01em;color:var(--ink);margin:
 p.sub{font-size:13.5px;color:var(--mut);margin:0 0 24px}
 label{display:block;font:700 10.5px/1 var(--head);letter-spacing:.1em;text-transform:uppercase;color:var(--slate);margin-bottom:8px}
 input{width:100%;padding:13px 14px;font-size:15px;font-family:var(--body);color:var(--ink);background:#fff;border:1px solid var(--bd);border-radius:9px;outline:none}
-input:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(91,141,239,.18)}
+input:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(47,95,196,.2)}
 button{width:100%;margin-top:18px;padding:13px 14px;font:700 14.5px/1 var(--head);letter-spacing:.02em;color:#fff;background:var(--blue);border:0;border-radius:9px;cursor:pointer;transition:background .15s}
 button:hover{background:var(--blue2)}
 button:disabled{opacity:.6;cursor:wait}
@@ -105,7 +105,7 @@ try { const saved = sessionStorage.getItem('mai_pw'); if (saved) attempt(saved, 
 const redirect = `<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow">
 <meta http-equiv="refresh" content="0;url=/PennyPR/">
 <title>Manage AI</title></head>
-<body style="margin:0;min-height:100vh;background:#22304A"></body></html>
+<body style="margin:0;min-height:100vh;background:#101D3A"></body></html>
 `;
 
 mkdirSync(join(root, 'PennyPR'), { recursive: true });
