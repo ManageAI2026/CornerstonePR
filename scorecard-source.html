@@ -35,8 +35,7 @@ td.grade{text-align:center;width:96px;font:800 11px/1 var(--head)}
 h2{font:800 11px/1.2 var(--head);letter-spacing:.6px;text-transform:uppercase;color:var(--ink);margin:22px 0 8px}
 ul{margin:0;padding-left:2px;list-style:none}li{margin:7px 0;font-size:12.5px;color:var(--slate);position:relative;padding-left:20px}
 li::before{content:"";position:absolute;left:0;top:6px;width:8px;height:8px;border-radius:2px;background:#C4CDD8}
-.coach{margin-top:22px;padding:16px 20px 10px;background:var(--surf);border:1px solid var(--bd);border-left:3px solid var(--blue);border-radius:12px}
-.coach h2{margin-top:0}.coach li{margin:8px 0}.coach b{color:var(--ink)}
+td.dc{color:var(--ink)}
 @media(max-width:620px){.rc{padding:22px 18px}h1{font-size:28px}.crit .tip{width:270px}.logo .cgc{height:38px}}
 </style></head><body>
 <div class="rc">
@@ -79,8 +78,6 @@ li::before{content:"";position:absolute;left:0;top:6px;width:8px;height:8px;bord
 
       <tr><td><span class="crit" tabindex="0">Catches contradictions, number mismatches, and errors inside the solicitation itself<span class="i">i</span><span class="tip"><b>In-solicitation contradiction &amp; document hygiene.</b> MEETS: surfaces conflicts and defects inside the RFP: clashing clauses, mismatched reference numbers, wrong contacts: and flags them for the owner instead of drafting over them. DEVELOPING: catches only obvious errors. NOT MET: takes the solicitation at face value.<span class="obs">OBSERVE: check the clarifying questions / compliance notes for internal RFP conflicts she caught.</span><span class="proven">Proven: single supervised run: caught a §3.h-vs-§4.2 look-back conflict, an E26-111/E26-055 footer number mismatch, and a "juneau.gob" contact typo.</span></span></span></td><td class="grade g-na">N/A</td><td class="grade g-meet">Meets</td></tr>
 
-      <tr><td><span class="crit" tabindex="0">Allocates pages by scoring weight and reworks cleanly to a limit: protecting the scored sections, never padding<span class="i">i</span><span class="tip"><b>Page physics.</b> MEETS: the page budget is allocated to the scored sections by weight; when the limit tightens, cuts come from cushion first and the scored content is protected; never pads to fill a cap. DEVELOPING: even allocation regardless of weight. NOT MET: overruns or pads to the cap.<span class="obs">OBSERVE: check the work plan's page allocation against the RFP's scoring weights.</span><span class="proven">Proven: single supervised run: a 17&rarr;15 page rework took cushion first and protected the scored sections (allocation was manual this run; the script exists).</span></span></span></td><td class="grade g-dev">Developing</td><td class="grade g-meet">Meets</td></tr>
-
       <tr class="bk"><td colspan="3">How She Works</td></tr>
 
       <tr><td><span class="crit" tabindex="0">On re-entry, verifies existing work against the source instead of trusting it or rewriting it<span class="i">i</span><span class="tip"><b>Idempotent resume: verify, don't clobber.</b> MEETS: finds work a prior run produced, re-checks it against the source, and keeps it if sound: neither blindly trusting nor needlessly regenerating it. DEVELOPING: re-does completed work. NOT MET: overwrites or ignores prior work.<span class="obs">OBSERVE: resume a pursuit mid-stream; confirm she validated rather than rebuilt the existing artifacts.</span><span class="proven">Proven: single supervised run: found a completed kickoff checklist and re-verified it against the RFP + addenda rather than trusting or overwriting it.</span></span></span></td><td class="grade g-na">N/A</td><td class="grade g-meet">Meets</td></tr>
@@ -93,15 +90,22 @@ li::before{content:"";position:absolute;left:0;top:6px;width:8px;height:8px;bord
     </tbody>
   </table>
 
-  <div class="coach">
-    <h2>Coaching this teammate</h2>
-    <ul>
-      <li><b>Expand what you hand her one work-type at a time</b>: let her prove each kind of work before trusting her with the next.</li>
-      <li><b>Correct her once, clearly.</b> An in-the-moment fix takes effect immediately; a "from now on" change comes back in her next release (days), not the next chat: so if a fresh session doesn't have a standing change yet, restate it and keep working.</li>
-      <li><b>Reward the record-over-recollection pushback</b>: when she holds to the source against a stated claim, including yours, that protects the bid. Don't train it out.</li>
-      <li><b>Prompt her to check her own resources early</b>: a quick "did you check the library?": until she reaches for them unprompted (her main growth area).</li>
-    </ul>
-  </div>
+  <h2>Document Evaluation Criteria (Justin's 5/26 standard)</h2>
+  <table>
+    <tbody>
+      <tr class="bk"><td>Tech Compliance <span class="pf">· pass / fail</span></td></tr>
+      <tr><td class="dc">TC1 — Fail if a required section header or sub-header is missing.</td></tr>
+      <tr><td class="dc">TC2 — Fail if supplemental docs, or anything requested in the RFP, is missing.</td></tr>
+      <tr class="bk"><td>Editorial — Substance &amp; Readability</td></tr>
+      <tr><td class="dc">ED1 — Actually answers the RFP with substance — real "meat," not a lot of words with little content, avoiding AI slop — and is skimmable and easy to read.</td></tr>
+      <tr class="bk"><td>Graphically Pleasing</td></tr>
+      <tr><td class="dc">GP1 — Proper layout and spacing for graphics; nice-looking tables; headers and footers properly branded and sized.</td></tr>
+      <tr><td class="dc">GP2 — Sufficient whitespace; consistent fonts and formatting.</td></tr>
+      <tr><td class="dc">GP3 — Placeholders for graphics, with graphic prompts/descriptions.</td></tr>
+      <tr class="bk"><td>Strategic Alignment</td></tr>
+      <tr><td class="dc">SA1 — Carries the strategy collaborated on during the process; the final output includes all three components, each produced through a back-and-forth dialogue into its own .md file: (1) Strategic Messaging — the 3 messages reiterated throughout to win, highlighting Cornerstone's strengths; (2) 5 Keys to Project Success; (3) Relevancy Tags — being strategic about which reference tag to use when (e.g., hospital vs medical vs CMGC).</td></tr>
+    </tbody>
+  </table>
 
   <h2>Updated since last review</h2>
   <ul>
@@ -109,16 +113,6 @@ li::before{content:"";position:absolute;left:0;top:6px;width:8px;height:8px;bord
     <li>She can no longer overwrite your work: every save keeps the prior version, she won't draft a section she has no evidence for, and every decision is logged.</li>
     <li>Facts are now verified against the record and gaps are labeled: the stale-figure and draft-from-memory failures from V1 are closed.</li>
     <li>Corrections are captured and routed to the build team automatically, and applied to the current work; recurring rules (mirror CM/GC spelling, no em-dashes, ask-don't-assume on tenure) are now permanent.</li>
-  </ul>
-
-  <h2>In development queue: not scored yet</h2>
-  <ul>
-    <li>Reach for her own resources unprompted (initiative): corrected, but the junior instinct persists; grade once it's habitual.</li>
-    <li>Autonomous reference &amp; team selection: skill 05 is tabled until the structured project-data layer exists; references are human-seeded until then.</li>
-    <li>Live company-drive navigation and never-send-under-pressure: proven on a fixture / structural only; grade once they run on a real drive and a real send is refused.</li>
-    <li>Graphic layout / placeholder capability: thin today; the smoke test packaged only ~50-60% once graphics were included.</li>
-    <li>Pace / velocity KPI: target only until live pursuits produce real stage timings.</li>
-    <li>Prove it behaviorally at scale: this reflects one supervised pursuit plus the code-enforced mechanisms; the multi-pursuit record and the regression against live B03 are still to come.</li>
   </ul>
 
 </div></body></html>
