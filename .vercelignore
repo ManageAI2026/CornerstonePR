@@ -1,6 +1,5 @@
-# Never deploy the unencrypted source or build tooling — only the site pages ship
+# Never deploy the unencrypted source or build tooling — only the site pages and assets ship
 scorecard-source.html
 tools/
-assets/
 README.md
 .gitignore

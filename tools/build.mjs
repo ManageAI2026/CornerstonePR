@@ -13,8 +13,8 @@ const PASSWORD = process.argv[2] || 'Manage2026!';
 const ITERATIONS = 600000;
 
 const plaintext = readFileSync(join(root, 'scorecard-source.html'), 'utf8');
-const logoDataUri = 'data:image/png;base64,' + readFileSync(join(root, 'assets', 'logo.png')).toString('base64');
-const logoWhiteDataUri = 'data:image/png;base64,' + readFileSync(join(root, 'assets', 'logo-white.png')).toString('base64');
+const logoDataUri = '/assets/logo.png';
+const logoWhiteDataUri = '/assets/logo-white.png';
 
 const salt = crypto.getRandomValues(new Uint8Array(16));
 const iv = crypto.getRandomValues(new Uint8Array(12));
@@ -113,10 +113,13 @@ body{margin:0;min-height:100vh;background:#1F2A3D;display:flex;align-items:cente
 .wrap{text-align:center}
 .wrap img{width:min(320px,70vw);height:auto;display:block;margin:0 auto 18px}
 .wrap .t{font:700 12px/1.4 'Montserrat',sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#8FA5CC}
+.wrap .enter{display:inline-block;margin-top:34px;padding:14px 58px;background:#fff;color:#1F2A3D;border-radius:10px;font:700 14px/1 'Montserrat',sans-serif;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;transition:background .15s,transform .15s}
+.wrap .enter:hover{background:#EDF1F7;transform:translateY(-1px)}
 </style></head><body>
 <div class="wrap">
   <img src="\${LOGO_WHITE}" alt="Manage AI">
   <div class="t">Cornerstone</div>
+  <a class="enter" href="/PennyPR">Enter</a>
 </div>
 </body></html>
 `.replace('\${LOGO_WHITE}', logoWhiteDataUri);
